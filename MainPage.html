@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CyberShop - передова програма для управління продажами електроніки">
+    <title>CyberShop - Рішення для продажу електроніки</title>
+    <link id="theme-link" rel="stylesheet" href="MainPageLightStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="icons/our_icon.ico" type="image/x-icon">
+
+    <script src="./MainPageScript.js" defer></script>
+    <script defer src="api_manager.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: 'tvdMfxQYx81HUszxK',
+        });
+      })();
+    </script>
+
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <svg class="pl" viewBox="0 0 128 128" width="128px" height="128px" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="pl-grad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="hsl(193,90%,55%)" />
+                    <stop offset="100%" stop-color="hsl(223,90%,55%)" />
+                </linearGradient>
+            </defs>
+            <circle class="pl__ring" r="56" cx="64" cy="64" fill="none" stroke="hsla(0,10%,10%,0.1)" stroke-width="16" stroke-linecap="round" />
+            <path class="pl__worm" d="M92,15.492S78.194,4.967,66.743,16.887c-17.231,17.938-28.26,96.974-28.26,96.974L119.85,59.892l-99-31.588,57.528,89.832L97.8,19.349,13.636,88.51l89.012,16.015S81.908,38.332,66.1,22.337C50.114,6.156,36,15.492,36,15.492a56,56,0,1,0,56,0Z" fill="none" stroke="url(#pl-grad)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="44 1111" stroke-dashoffset="10" />
+        </svg>
+    </div>
+
+    <header class="main_h">
+        <div class="row">
+            <a class="logo" href="#"><img src="icons/LOGO_our.jpg" alt="Logo" /></a>
+    
+            <div class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    
+           <nav>
+                <ul>
+                    <li><a href="#about" class="menu-link" data-section="about">Про проект</a></li>
+                    <li><a href="#services" class="menu-link" data-section="services">Сервіси</a></li>
+                    <li><a href="#price" class="menu-link" data-section="price">Ціни</a></li>
+                    <li><a href="#cta" class="menu-link" data-section="contact">Зв'язатися з нами</a></li>
+                </ul>
+            </nav>
+    
+            <div class="header-tools">
+                <!-- Переключатель темы -->
+                <button id="light-theme">
+                    <img src="icons/icon-brightness.png" alt="Light Theme" />
+                </button>
+                <button id="dark-theme">
+                    <img src="icons/icon-moon-stars.png" alt="Dark Theme" />
+                </button>
+                
+                <!-- Переключатель языка -->
+                <button id="lang-btn">
+                    <img src="icons/language.png" alt="Language" />
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Модальное окно -->
+    <div id="language_modal" class="language_modal">
+        <div class="language_modal-content">
+            <span class="language_close-button" id="close-language-modal">&times;</span>
+            <h2 class="language_modal-text">Оберіть мову сайту</h2>
+            <input type="text" id="language-search" class="language-search" placeholder="Пошук мови">
+            <ul id="language-list" class="language-list">
+                <!-- Здесь будут элементы списка языков -->
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- Fullscreen Hero Section with Parallax -->
+    <section class="hero" id="hero-section">
+        <div class="hero-left">
+            <div class="hero-content">
+                <h1>CYBER SHOP</h1>
+                <p>Це передове програмне рішення, яке полегшує управління продажами електроніки, автоматизує процеси та забезпечує максимальну зручність для бізнесу. З нашою платформою ви зможете швидко відстежувати замовлення, керувати запасами, аналізувати продажі та покращувати обслуговування клієнтів. Ідеальний вибір для сучасного ринку електронної комерції.</p>
+            </div>
+    
+            <div class="hero-buttons">
+                <a href="https://github.com/denis-polit/Electronics-sales-app-on-Javafx" class="hb hbp">Отримати демо > </a>
+                <a href="#about" class="hb hbs">Дізнатись більше &#8595; </a>
+            </div>
+            <!-- <div class="scroll-down-1">&#8595;</div> -->
+        </div>
+        
+        <img src="photo_elements/price_photo.png" alt="Price Photo" class="hero-image">
+    </section>
+
+
+    <!-- About Section -->
+    <section class="content-section" id="about">
+        <h1 class="scroll-animate">ПРО СИСТЕМУ</h1>
+        <div class="content-container">
+            <div class="text-content">
+                <p class="scroll-animate">"CyberShop" — це інноваційне рішення для управління продажами електроніки, яке включає інтерактивний каталог, управління замовленнями, аналітику та багато інших функцій. Наша платформа допомагає як власникам бізнесу, так і клієнтам покращити процес купівлі та продажу електроніки.</p>
+                <div class="subheadings">
+                    <div class="subheading-item scroll-animate">
+                        <img src="icons/increase.png" alt="Increase Sales Icon">
+                        <div>
+                            <h3>Збільшення продажів</h3>
+                            <p>Ця функція допомагає збільшити обсяги продажів за рахунок вдосконалення роботи з клієнтами та автоматизації процесів.</p>
+                        </div>
+                    </div>
+                    <div class="subheading-item scroll-animate">
+                        <img src="icons/productivity.png" alt="Process Optimization Icon">
+                        <div>
+                            <h3>Автоматизація та оптимізація робочих процесів</h3>
+                            <p>Система дозволяє автоматизувати основні бізнес-процеси, що зменшує помилки та покращує продуктивність.</p>
+                        </div>
+                    </div>
+                    <div class="subheading-item scroll-animate">
+                        <img src="icons/monitor.png" alt="Analytics Control Icon">
+                        <div>
+                            <h3>Аналітика, моніторинг і контроль</h3>
+                            <p>Ця функція надає можливість стежити за ключовими показниками бізнесу в режимі реального часу.</p>
+                        </div>
+                    </div>
+                    <div class="subheading-item scroll-animate">
+                        <img src="icons/atm-card.png" alt="Payment Integration Icon">
+                        <div>
+                            <h3>Інтеграція з різними платіжними системами</h3>
+                            <p>Система підтримує інтеграцію з широким спектром платіжних платформ для забезпечення зручних платежів.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="video-content">
+                <video autoplay loop muted>
+                    <source src="photo_elements/Home_Page_1634.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <div class="scroll-down-2">&#8595;</div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="service-section" id="services">
+        <h2 id="serviceCount">СЕРВІСИ: </h2>  <!-- This will display the service count -->
+        <div class="service-container">
+            <div class="services-cards" id="services-cards">
+                
+
+            </div>
+            <button class="show-more-button" onclick="showMore()">
+                <img src="icons/show-more.png" alt="Show more icon" class="icon">
+            </button>
+            <button class="show-less-button" onclick="showLess()">
+                <img src="icons/show-less.png" alt="Show less icon" class="icon">
+            </button>
+        </div>
+        <div class="scroll-down-3">&#8595;</div>
+    </section>
+    
+    <!-- Price Section -->
+    <section class="price-section" id="price">
+        <div class="price-container">
+            <h2>ТАРИФНІ ПЛАНИ: </h2>
+            <p class="pc-string">Оберіть тарифний план, який найкраще підходить для вашого бізнесу:</p>
+            <div class="pricing-cards">
+                
+            </div>
+        </div>
+        <div class="scroll-down-4">&#8595;</div>
+    </section>
+
+    <!-- Modal Buy Structure -->
+    <div class="modal" id="purchaseModal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-button" id="closeModal">&times;</span>
+            <h2>Оформити покупку</h2>
+            
+            <!-- Image Section -->
+            <div class="modal-image">
+                <img src="photo_elements/price_photo.png" alt="Price Photo">
+            </div>
+            
+            <!-- Purchase Information -->
+            <div class="modal-info">
+                <p class="modal-text">Вибраний тариф: <span id="selectedPlan"></span></p>
+                <p class="modal-text price-mwt">Ціна: <span id="packagePrice"></span></p>
+                
+                <label for="email" class="modal-label">Ваш Email:</label>
+                <input type="email" id="email" placeholder="Введіть ваш email" required>
+            
+                <label for="socialMedia" class="modal-label">Соціальна мережа (необов'язково):</label>
+                <select id="socialMedia">
+                    <option value="">Виберіть соціальну мережу</option>
+                    <option value="Facebook">Facebook</option>
+                    <option value="Instagram">Instagram</option>
+                    <option value="Twitter">Twitter</option>
+                    <option value="LinkedIn">LinkedIn</option>
+                    <option value="Telegram">Telegram</option>
+                    <option value="Other">Інше</option>
+                </select>
+            
+                <!-- Поле для идентификатора социальной сети -->
+                <input type="text" id="socialMediaId" placeholder="Ваш нікнейм або ідентифікатор" style="display: none;" />
+            
+                <button id="sendEmailButton">
+                    <img src="icons/send.png" alt="Send" class="icon">
+                </button>
+                <p id="modalMessage" class="modal-message"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="contact-section" id="cta">
+        <h2>ГОТОВІ РОСТИ?</h2>
+        <p>Це просто, заповніть форму, і член нашої команди зв’яжеться з вами з подальшими кроками.</p>
+        <button id="openModalButton" class="btn-contact">Зв'язатись</button>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://github.com" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="https://t.me/username" target="_blank" class="social-icon"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://wa.me/yourphone" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            <a href="viber://chat?number=yourphone" target="_blank" class="social-icon"><i class="fab fa-viber"></i></a>
+            <a href="facetime://yourappleid" target="_blank" class="social-icon"><i class="fas fa-video"></i></a>
+            <a href="mailto:your-email@example.com" target="_blank" class="social-icon"><i class="fas fa-envelope"></i></a>
+        </div>
+        <div class="scroll-to-start">&#8593;</div>
+    </footer>
+
+
+    <!-- Modal Contact Structure -->
+    <div id="contactModal" class="contact-modal-window">
+      <div class="modal-content">
+        <span class="close-cmf-button">&times;</span>
+        <div class="modal-content-container">
+          <!-- Left Column: Contact Form -->
+          <div class="modal-form-content">
+            <h2>Зв'язатись</h2>
+            <p>Заповніть форму, і член нашої команди зв’яжеться з вами з подальшими кроками.</p>
+        
+            <form id="contactForm">
+              <label for="name">Ім'я</label>
+              <input type="text" id="name" name="name" placeholder="Введіть ваше Ім'я" required />
+        
+              <label for="email">Пошта</label>
+              <input type="email" id="email" name="email" placeholder="Введіть вашу ел. пошту" required />
+        
+              <label for="message">Повідомлення</label>
+              <textarea id="message" name="message" placeholder="Напишіть повідомлення" required></textarea>
+        
+              <label>
+                <input type="checkbox" name="terms" required /> Я приймаю умови політики конфеденційності.
+              </label>
+        
+              <button type="submit" id="sendEmailButton" class="request_send_button">
+                <img src="icons/send.png" alt="Send" class="request_send_icon">
+              </button>
+              <p id="modalMessage" style="color: red; font-size: 14px;"></p>
+            </form>
+          </div>
+    
+          <!-- Right Column: Image -->
+          <div class="modal-image-content">
+            <img src="photo_elements/contact_photo.png" alt="Contact Illustration" class="contact-photo">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+        window.addEventListener("load", function() {
+            const preloader = document.getElementById("preloader");
+            preloader.style.opacity = "0";
+            setTimeout(() => {
+                preloader.style.display = "none";
+            }, 300);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.11.5",
+    "winston": "^3.17.0"
+  },
+  "name": "c.b_shop",
+  "version": "1.0.0",
+  "main": "MainPageScript.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
